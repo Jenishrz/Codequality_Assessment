@@ -28,7 +28,7 @@ public class CMSController {
         dao.save(cust);
         return "Inserted";
     }
-    @PutMapping("performUpdate")
+    @PostMapping("performUpdate")
     public String PerformUpdate(@RequestBody Customer cust) {
         dao.save(cust);
         return "Updated";
@@ -38,7 +38,7 @@ public class CMSController {
         dao.deleteById(id);
         return "Deleted";
     }
-    @GetMapping("viewAll")
+    @PostMapping("viewAll")
     public List<Customer> viewAllCustomer() {
         Iterator<Customer> it = dao.findAll().iterator();
         ArrayList<Customer> list = new ArrayList<Customer>();
